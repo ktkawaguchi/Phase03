@@ -1,0 +1,18 @@
+body {
+    background-color: darkslategray;
+    color: antiquewhite;
+}
+.containMe {
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: 33%, 33%, 33%;
+}
+.pictureHolder {
+    width: 80%;
+    height: 250px;
+    padding: 5px;
+}
+.picture {
+    width: 100%;
+    height: auto;
+}
