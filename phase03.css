@@ -1,16 +1,21 @@
 body {
     background-color: darkslategray;
     color: antiquewhite;
+    margin: 10px;
 }
 .containMe {
     display: grid;
     grid-gap: 3px;
-    grid-template-columns: 33%, 33%, 33%;
+    grid-template-columns: 33% 33% 33%;
 }
-.pictureHolder {
-    width: 80%;
-    height: 250px;
-    padding: 5px;
+.box {
+    background-color: brown;
+    color: blue;
+    border-radius: 3px;
+    padding: 20px;
+    font-size: 150%;
+    margin: 3px;
+    border: 3px;
 }
 .picture {
     width: 100%;

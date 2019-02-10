@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="phase03.css">
-    <title>Phase 02</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    <title>Phase 03</title>
 </head>
 <body>
     <header>
         <h1>Ken Kawguchi</h1>
         <h2><a href="https://github.com/ktkawaguchi/Phase02">MyGitHub</a></h2>
     </header>
-    <div id="picture" class="pictureHolder"></div>
-    <p id="caption"></p>
+    <div id="picture" class="containMe"></div>
 </body>
 
 <script>
@@ -27,10 +30,13 @@
     //iterates over the picture arrays and adds them to the DOM
     for (var i = 0; i < picURL.length; i++){
 
+        //create a box to go around each picture
+
+
         //creates a div to contain each picture and caption
         var newDiv = document.createElement("div");
         newDiv.setAttribute("id","container" + i);
-        newDiv.setAttribute("class","picture");
+        newDiv.setAttribute("class","box");
         document.getElementById("picture").appendChild(newDiv);
 
         //creates the URL for the details of the image
