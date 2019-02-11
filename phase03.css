@@ -1,6 +1,6 @@
 body {
-    background-color: #542437;
-    color: #ECD078;
+    background-color: #565656;
+    color: #76323F;
     margin: 10px;
 }
 .containMe {
@@ -9,8 +9,8 @@ body {
     grid-template-columns: 33% 33% 33%;
 }
 .box {
-    background-color: #53777A;
-    color: #ECD078;
+    background-color: #D7CEC7;
+    color: #76323F;
     border-radius: 3px;
     padding: 20px;
     font-size: 150%;
@@ -23,5 +23,5 @@ body {
 }
 
 a {
-    color: #C02942;
+    color: #C09F80;
 }
