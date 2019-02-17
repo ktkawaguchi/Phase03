@@ -75,12 +75,10 @@ $(document).ready(function(){
                 "type": "button",
                 }).on("click",function(){
                     var btnNumber = this.id.match(/\d+/);
-                    console.log("the btn number is "+btnNumber);
                     $(this).attr("disabled",true);
                     $("#unFavBtn"+btnNumber).attr("disabled",false);
                     createCookie("image"+btnNumber,btnNumber+".jpg",1);
-                    var message = "This is cookie " + readCookie("image"+btnNumber);
-                    console.log(message);
+                    document.getElementById("imageLink"+btnNumber).click();
             }).appendTo("#container"+i);
         }
 
@@ -93,7 +91,7 @@ $(document).ready(function(){
                 $(this).attr("disabled",true);
                 $("#favBtn"+btnNumber).attr("disabled",false);
                 eraseCookie("image"+btnNumber);
-
+                location.reload();
         }).appendTo("#container"+i);
         if (activateUnFav) {
             $("#unFavBtn"+i).attr("disabled",false);

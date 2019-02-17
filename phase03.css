@@ -3,11 +3,21 @@ body {
     color: #76323F;
     margin: 10px;
 }
+
+a {
+    color: #C09F80;
+}
+
+i {
+    margin-right: 20px;
+}
+
 .containMe {
     display: grid;
     grid-gap: 3px;
     grid-template-columns: 33% 33% 33%;
 }
+
 .box {
     background-color: #D7CEC7;
     color: #76323F;
@@ -17,16 +27,12 @@ body {
     margin: 3px;
     border: 3px;
 }
+
 .picture {
     width: 100%;
     height: auto;
 }
+
 .favorite {
-    background-color: red;
-}
-.favorited {
-    background-color: green;
-}
-a {
-    color: #C09F80;
+    background-color: orange;
 }

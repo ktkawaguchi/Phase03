@@ -16,7 +16,7 @@
 </head>
 <body>
     <button id="backButton">Go Back</button>
-    <div id="detailImage" class="pictureHolder"></div>
+    <div id="detailImage" class="box"></div>
 
     <script>
         //setting up the back button
@@ -37,6 +37,7 @@
             }
             return(false);
         };
+
         //reads cookie to see if its a favorite
         var picURL = getQueryVariable("pic");
         var imageNumber = picURL.match(/\d+/);
@@ -45,7 +46,7 @@
             $("#detailImage").addClass("favorite");
             $("<i></i>").attr("class","fas fa-star").appendTo("#detailImage");
         }
-        
+
         //creates the p tag with the title and adds it to the DOM
         var captionURL = getQueryVariable("caption");
         var pCaption = document.createElement("p");
