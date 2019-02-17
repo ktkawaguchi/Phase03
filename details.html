@@ -37,21 +37,21 @@
             }
             return(false);
         };
-
-        //creates the p tag with the title and adds it to the DOM
-        var captionURL = getQueryVariable("caption");
-        var pCaption = document.createElement("p");
-        pCaption.setAttribute("id","caption");
-        pCaption.innerText = captionURL;
-        document.getElementById("detailImage").appendChild(pCaption);
-   
         //reads cookie to see if its a favorite
         var picURL = getQueryVariable("pic");
         var imageNumber = picURL.match(/\d+/);
         var cookieNumber = readCookie("image"+imageNumber);
         if (picURL === cookieNumber) {
             $("#detailImage").addClass("favorite");
+            $("<i></i>").attr("class","fas fa-star").appendTo("#detailImage");
         }
+        
+        //creates the p tag with the title and adds it to the DOM
+        var captionURL = getQueryVariable("caption");
+        var pCaption = document.createElement("p");
+        pCaption.setAttribute("id","caption");
+        pCaption.innerText = captionURL;
+        document.getElementById("detailImage").appendChild(pCaption);
 
         //creates img and adds the picture to the DOM
         var image = document.createElement("img");
