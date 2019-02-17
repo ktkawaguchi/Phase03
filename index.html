@@ -32,7 +32,7 @@ $(document).ready(function(){
                         "Fun for long drives.", "I could never afford this piece of art."];
 
     //iterates over the picture arrays and adds them to the DOM
-    for (var i = 0; i < picURL.length; i++){
+    for (var i = 1; i <= picURL.length; i++){
 
         //creates a div to contain each picture and caption
         var newDiv = document.createElement("div");
@@ -41,8 +41,8 @@ $(document).ready(function(){
         document.getElementById("picture").appendChild(newDiv);
 
         //creates the URL for the details of the image
-        var url = "details.html?pic=" +  picURL[i] + 
-        "&caption=" + picCaption[i] + "&details=" + picDesc[i];
+        var url = "details.html?pic=" +  picURL[i-1] + 
+        "&caption=" + picCaption[i-1] + "&details=" + picDesc[i-1];
         console.log("theurl: " + url);
 
         //creates the a tag and adds the details page URL to it
@@ -53,14 +53,14 @@ $(document).ready(function(){
 
         //creates the image and adds it to the div container
         var image = document.createElement("img");
-        image.setAttribute("src", picURL[i]);
+        image.setAttribute("src", picURL[i-1]);
         image.setAttribute("id","picture" + i);
         image.setAttribute("class","picture");
         document.getElementById("imageLink"+i).appendChild(image);
 
         //creates the caption and adds it to the div container
         var caption = document.createElement("p");
-        caption.innerHTML = picCaption[i];
+        caption.innerHTML = picCaption[i-1];
         caption.setAttribute("id", "caption" + i);
         document.getElementById("container"+i).appendChild(caption);
 
@@ -69,13 +69,13 @@ $(document).ready(function(){
             var activateUnFav = true;
             $("#container"+i).css("background-color","orange");
             $("<i></i>").attr("class","fas fa-star").appendTo("#container"+i);
-            
         } else {
             $("<button>Make Favorite</button>").attr({
                 "id":"favBtn"+i,
                 "type": "button",
                 }).on("click",function(){
                     var btnNumber = this.id.match(/\d+/);
+                    console.log("the btn number is "+btnNumber);
                     $(this).attr("disabled",true);
                     $("#unFavBtn"+btnNumber).attr("disabled",false);
                     createCookie("image"+btnNumber,btnNumber+".jpg",1);

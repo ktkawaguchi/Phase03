@@ -49,8 +49,6 @@
         var picURL = getQueryVariable("pic");
         var imageNumber = picURL.match(/\d+/);
         var cookieNumber = readCookie("image"+imageNumber);
-        alert(cookieNumber);
-        alert(picURL);
         if (picURL === cookieNumber) {
             $("#detailImage").addClass("favorite");
         }
