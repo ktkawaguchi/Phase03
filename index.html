@@ -21,11 +21,6 @@
 
 <script>
 $(document).ready(function(){
-    $("<button/>", {
-        text: i,
-        id: "button1",
-        click: function () {alert("is this working?"); }
-    });
     var picURL = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg"];
     var picCaption = ["Classic Civic","Another Civic","Different Color","Another Another Civic",
                         "One More", "Okay Last One"];
@@ -65,6 +60,29 @@ $(document).ready(function(){
         caption.innerHTML = picCaption[i];
         caption.setAttribute("id", "caption" + i);
         document.getElementById("container"+i).appendChild(caption);
+
+        //creates button and adds it to the div container
+        $("<button>Make Favorite</button>").attr({
+            "id":"favBtn"+i,
+            "type": "button",
+            }).on("click",function(){
+                var btnNumber = this.id.match(/\d+/);
+                console.log("the button nuber is:"+btnNumber);
+                $(this).attr("disabled",true);
+                $("#unFavBtn"+btnNumber).attr("disabled",false);
+        }).appendTo("#container"+i);
+
+        $("<button>Unfavorite</button>").attr({
+            "id":"unFavBtn"+i,
+            "type": "button",
+            "disabled": true
+            }).on("click",function(){
+                var btnNumber = this.id.match(/\d+/);
+                console.log(btnNumber);
+                $(this).attr("disabled",true);
+                $("#favBtn"+btnNumber).attr("disabled",false);
+                console.log("this is a test of button " + $(this).attr("id"));
+        }).appendTo("#container"+i);
     }
 });
 </script>

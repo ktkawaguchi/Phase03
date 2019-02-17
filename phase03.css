@@ -21,6 +21,12 @@ body {
     width: 100%;
     height: auto;
 }
+.favorite {
+    background-color: red;
+}
+.favorited {
+    background-color: green;
+}
 
 a {
     color: #C09F80;
